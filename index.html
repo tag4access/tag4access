@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tag4Access — Support &amp; Privacy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#4A7FB5;
+  --blue-mid:#35649A;
+  --blue-dark:#1E3F63;
+  --blue-light:#EAF1F8;
+  --blue-pale:#F3F7FB;
+  --taupe:#A8957A;
+  --taupe-mid:#8C7A63;
+  --taupe-dark:#5C4F3D;
+  --taupe-light:#F0EBE3;
+  --cream:#F5F2ED;
+  --text:#2C2926;
+  --muted:#6B6259;
+  --light:#B0A89E;
+  --border:#DDD8D0;
+  --white:#FFFFFF;
+  --r:14px;
+  --rs:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;font-size:16px}
+a{color:var(--blue-mid);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:.85rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo{width:36px;height:36px;border-radius:8px;overflow:hidden;background:var(--cream);display:flex;align-items:center;justify-content:center}
+.nav-logo img{width:100%;height:100%;object-fit:contain}
+.nav-name{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--text)}
+.nav-links{display:flex;gap:1.5rem;font-size:.875rem}
+.nav-links a{color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--blue-mid);text-decoration:none}
+@media(max-width:640px){.nav-links{display:none}}
+
+.hero{background:var(--blue-dark);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 0%,rgba(74,127,181,.3) 0%,transparent 60%),radial-gradient(ellipse at 20% 100%,rgba(168,149,122,.2) 0%,transparent 50%);pointer-events:none}
+.hero-logo{width:88px;height:88px;background:var(--white);border-radius:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;padding:8px;box-shadow:0 4px 24px rgba(0,0,0,.18)}
+.hero-logo img{width:100%;height:100%;object-fit:contain;border-radius:14px}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);color:#A8C8E8;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:1.25rem}
+.hero-badge span{width:6px;height:6px;background:#A8C8E8;border-radius:50%;display:inline-block}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3rem);font-weight:600;color:white;line-height:1.15;margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:#C8B99A}
+.hero p{font-size:1rem;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 2rem;line-height:1.7}
+.hero-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.btn-p{background:var(--taupe);color:white;font-weight:500;font-size:.9rem;padding:.7rem 1.5rem;border-radius:var(--rs);border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;display:inline-block}
+.btn-p:hover{background:var(--taupe-mid);text-decoration:none;color:white}
+.btn-g{background:rgba(255,255,255,.1);color:white;font-size:.9rem;padding:.7rem 1.5rem;border-radius:var(--rs);border:1px solid rgba(255,255,255,.22);transition:background .2s;display:inline-block}
+.btn-g:hover{background:rgba(255,255,255,.18);text-decoration:none;color:white}
+
+.section{padding:4rem 1.5rem}
+.si{max-width:860px;margin:0 auto}
+.slabel{display:inline-block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:.5rem}
+.stitle{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:600;margin-bottom:.5rem}
+.ssub{color:var(--muted);max-width:520px;margin-bottom:2.5rem;font-size:.95rem}
+
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
+.acard{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem}
+.aic{width:42px;height:42px;background:var(--blue-light);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.aic svg{width:20px;height:20px;stroke:var(--blue-mid);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.acard h3{font-size:.95rem;font-weight:500;margin-bottom:.4rem}
+.acard p{font-size:.85rem;color:var(--muted);line-height:1.6}
+
+.steps{display:flex;flex-direction:column;gap:0;margin-top:2rem}
+.step{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--border)}
+.step:last-child{border-bottom:none}
+.stepn{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--blue-light);color:var(--blue-mid);font-weight:500;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.step h3{font-size:.95rem;font-weight:500;margin-bottom:.3rem}
+.step p{font-size:.875rem;color:var(--muted);line-height:1.6}
+
+.faq-list{margin-top:2rem;display:flex;flex-direction:column;gap:.75rem}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--rs);overflow:hidden}
+.faq-q{width:100%;background:none;border:none;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;color:var(--text);text-align:left}
+.faq-q:hover{background:var(--cream)}
+.faq-q .arr{flex-shrink:0;width:18px;height:18px;stroke:var(--light);fill:none;stroke-width:2;transition:transform .2s}
+.faq-item.open .faq-q .arr{transform:rotate(180deg);stroke:var(--blue-mid)}
+.faq-a{display:none;padding:.75rem 1.25rem 1rem;font-size:.875rem;color:var(--muted);line-height:1.7;border-top:1px solid var(--border)}
+.faq-item.open .faq-a{display:block}
+
+.cwrap{display:grid;grid-template-columns:1fr 1.4fr;gap:2rem;margin-top:2rem}
+@media(max-width:640px){.cwrap{grid-template-columns:1fr}}
+.cinfo{display:flex;flex-direction:column;gap:1rem}
+.iitem{display:flex;gap:12px;align-items:flex-start;padding:1rem 1.25rem;background:var(--white);border:1px solid var(--border);border-radius:var(--rs)}
+.iic{flex-shrink:0;width:36px;height:36px;background:var(--taupe-light);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.iic svg{width:16px;height:16px;stroke:var(--taupe-mid);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.iitem h4{font-size:.78rem;color:var(--light);font-weight:400;margin-bottom:2px}
+.iitem p{font-size:.9rem;font-weight:500}
+.fcard{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.75rem}
+.fr{margin-bottom:1rem}
+.fr label{display:block;font-size:.78rem;font-weight:500;color:var(--muted);margin-bottom:5px}
+.fr input,.fr select,.fr textarea{width:100%;padding:.6rem .875rem;border:1px solid var(--border);border-radius:var(--rs);font-family:'DM Sans',sans-serif;font-size:.875rem;color:var(--text);background:var(--cream);outline:none;transition:border-color .2s}
+.fr input:focus,.fr select:focus,.fr textarea:focus{border-color:var(--blue)}
+.fr textarea{resize:vertical;min-height:100px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.sbtn{width:100%;padding:.75rem;background:var(--blue);color:white;border:none;border-radius:var(--rs);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;transition:background .2s,transform .1s}
+.sbtn:hover{background:var(--blue-mid)}
+.sbtn:active{transform:scale(.98)}
+.succ{display:none;background:var(--blue-light);color:var(--blue-dark);border-radius:var(--rs);padding:.75rem 1rem;font-size:.875rem;text-align:center;margin-top:.75rem}
+
+.pdate{display:inline-block;background:var(--taupe-light);color:var(--taupe-mid);font-size:.78rem;padding:4px 12px;border-radius:100px;margin-bottom:1.5rem}
+.pbody{margin-top:2rem}
+.ps{margin-bottom:2rem}
+.ps h3{font-size:1rem;font-weight:500;color:var(--blue-mid);margin-bottom:.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--blue-light)}
+.ps p{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:.5rem}
+.ps ul{padding-left:1.2rem}
+.ps li{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:.25rem}
+
+hr.div{border:none;border-top:1px solid var(--border);margin:0}
+.altbg{background:var(--blue-pale)}
+
+footer{background:var(--blue-dark);color:rgba(255,255,255,.5);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:2}
+footer strong{color:rgba(255,255,255,.9);font-family:'Fraunces',serif;font-size:1rem}
+footer a{color:rgba(255,255,255,.45)}
+footer a:hover{color:rgba(255,255,255,.75);text-decoration:none}
+.fdiv{width:40px;height:1px;background:rgba(255,255,255,.15);margin:1rem auto}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo"><img src="Tag4Access_Logo.png" alt="Tag4Access"></div>
+    <span class="nav-name">Tag4Access</span>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="#privacy">Privacy</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-logo"><img src="Tag4Access_Logo.png" alt="Tag4Access logo"></div>
+  <div class="hero-badge"><span></span>Community-powered accessibility mapping</div>
+  <h1>Making the world<br><em>accessible</em> together</h1>
+  <p>Tag4Access lets you discover, report, and verify real-world accessibility information — powered by a community of contributors and youth accessibility leaders.</p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn-p">Get support</a>
+    <a href="#how-it-works" class="btn-g">How it works</a>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="si">
+    <div class="slabel">About the app</div>
+    <h2 class="stitle">What is Tag4Access?</h2>
+    <p class="ssub">Tag4Access is a mobile app that helps people with disabilities navigate the real world by crowdsourcing accessibility information about physical locations.</p>
+    <div class="about-grid">
+      <div class="acard">
+        <div class="aic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Map accessibility issues</h3>
+        <p>Submit tags on real-world locations to flag missing ramps, broken lifts, inaccessible entrances, and more.</p>
+      </div>
+      <div class="acard">
+        <div class="aic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Youth leader verification</h3>
+        <p>Every tag is reviewed and verified by trained youth accessibility leaders before it goes live on the map.</p>
+      </div>
+      <div class="acard">
+        <div class="aic"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Trusted community data</h3>
+        <p>All approved tags are tied to verified accounts, ensuring the map reflects accurate, accountable information.</p>
+      </div>
+      <div class="acard">
+        <div class="aic"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Privacy by design</h3>
+        <p>We collect only what's necessary to run the app and never sell your personal data to third parties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="section" id="how-it-works">
+  <div class="si">
+    <div class="slabel">How it works</div>
+    <h2 class="stitle">Reporting an accessibility issue</h2>
+    <p class="ssub">It takes less than a minute to submit a tag. Here's the full process from submission to live map.</p>
+    <div class="steps">
+      <div class="step"><div class="stepn">1</div><div><h3>Create an account</h3><p>Sign up with your email address. An account is required so submissions are tied to a verified contributor — this keeps the map accurate and trustworthy.</p></div></div>
+      <div class="step"><div class="stepn">2</div><div><h3>Find the location on the map</h3><p>Navigate to the place with the accessibility issue. Tap the + button and drop a pin on the exact spot.</p></div></div>
+      <div class="step"><div class="stepn">3</div><div><h3>Describe the issue</h3><p>Select the issue type (e.g. missing ramp, broken lift, no accessible entrance) and optionally add a photo or short description.</p></div></div>
+      <div class="step"><div class="stepn">4</div><div><h3>Youth leader review</h3><p>A trained youth accessibility leader reviews your submission, verifies the details, and approves or flags it — usually within 48 hours.</p></div></div>
+      <div class="step"><div class="stepn">5</div><div><h3>Tag goes live</h3><p>Once approved, the tag appears on the map for the entire community to see and benefit from.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="section altbg" id="faq">
+  <div class="si">
+    <div class="slabel">Support</div>
+    <h2 class="stitle">Frequently asked questions</h2>
+    <p class="ssub">Can't find your answer? Reach out via the contact form below.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Why do I need an account to use Tag4Access?<svg class="arr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a">Tag4Access is built on accountable, verified community data. Because tags inform real accessibility decisions for people with disabilities, every submission must be linked to a verified contributor. This prevents spam and ensures the map stays accurate and trustworthy.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I submit an accessibility tag?<svg class="arr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a">Sign in, tap the + button on the map, drop a pin on the location with the issue, choose the issue type, and optionally add a photo. Submit and a youth leader will review it within 48 hours.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does tag approval take?<svg class="arr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a">Most tags are reviewed and approved within 48 hours by our youth accessibility leaders. You'll be notified once your submission is approved or if the reviewer needs more information.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">I'm a youth leader — how do I review tags?<svg class="arr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a">Log in with your youth leader account and navigate to the Pending Reviews tab. You'll see all submitted tags awaiting verification. Tap a tag to view details, approve it, or flag it for follow-up.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I report an incorrect or outdated tag?<svg class="arr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a">Tap any tag on the map, then use the "Report issue" option at the bottom of the tag detail screen. Describe the problem and a youth leader will investigate. You can also email us at tag4access@gmail.com.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I delete my account and data?<svg class="arr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a">You can request deletion of your account and all associated data at any time by emailing tag4access@gmail.com. We will process your request promptly.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What data does Tag4Access collect?<svg class="arr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a">We collect your email address, precise location (for map features), photos you upload with tags, a unique user ID, and anonymous usage and crash data. We do not sell your data. See the full Privacy Policy below for details.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="section" id="contact">
+  <div class="si">
+    <div class="slabel">Get in touch</div>
+    <h2 class="stitle">Contact support</h2>
+    <p class="ssub">We're here to help. Send us a message and we'll get back to you within 1–2 business days.</p>
+    <div class="cwrap">
+      <div class="cinfo">
+        <div class="iitem">
+          <div class="iic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><h4>Email us</h4><p><a href="mailto:tag4access@gmail.com">tag4access@gmail.com</a></p></div>
+        </div>
+        <div class="iitem">
+          <div class="iic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><h4>Response time</h4><p>Within 1–2 business days</p></div>
+        </div>
+        <div class="iitem">
+          <div class="iic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><h4>In-app support</h4><p>Use "Report issue" on any tag</p></div>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fgrid">
+          <div class="fr"><label for="fn">First name</label><input type="text" id="fn" placeholder="Jane"></div>
+          <div class="fr"><label for="ln">Last name</label><input type="text" id="ln" placeholder="Smith"></div>
+        </div>
+        <div class="fr"><label for="em">Email address</label><input type="email" id="em" placeholder="jane@example.com"></div>
+        <div class="fr">
+          <label for="tp">Topic</label>
+          <select id="tp">
+            <option value="">Select a topic...</option>
+            <option>Tag submission issue</option>
+            <option>Youth leader access</option>
+            <option>Account or login problem</option>
+            <option>Incorrect or outdated tag</option>
+            <option>Data deletion request</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fr"><label for="mg">Message</label><textarea id="mg" placeholder="Describe your issue in detail..."></textarea></div>
+        <button class="sbtn" onclick="submitForm()">Send message</button>
+        <div class="succ" id="succ">Message sent! We'll be in touch within 1–2 business days.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="section" id="privacy">
+  <div class="si">
+    <div class="slabel">Legal</div>
+    <h2 class="stitle">Privacy Policy</h2>
+    <div class="pdate">Effective Date: May 31, 2026</div>
+    <div class="pbody">
+      <div class="ps">
+        <h3>1. Introduction</h3>
+        <p>Welcome to Tag4Access. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.</p>
+        <p>If you have any questions or concerns about this policy, please contact us at <a href="mailto:tag4access@gmail.com">tag4access@gmail.com</a>.</p>
+      </div>
+      <div class="ps">
+        <h3>2. Information We Collect</h3>
+        <p>We collect the following categories of personal information:</p>
+        <ul>
+          <li><strong>Email Address</strong> – Used to create and manage your account and authenticate your identity.</li>
+          <li><strong>Precise Location</strong> – Used to display accessibility information on the map and tag real-world locations.</li>
+          <li><strong>Photos and Videos</strong> – Images you upload when submitting accessibility tags or reviews.</li>
+          <li><strong>User ID</strong> – A unique identifier assigned to your account to manage your submissions and activity.</li>
+          <li><strong>Product Interaction Data</strong> – Anonymous data about how you use the app, used to improve features.</li>
+          <li><strong>Crash Data</strong> – Anonymous diagnostic data to help us fix bugs and improve app stability.</li>
+        </ul>
+      </div>
+      <div class="ps">
+        <h3>3. How We Use Your Information</h3>
+        <ul>
+          <li>Create and manage your user account</li>
+          <li>Enable you to submit, view, and review accessibility tags on the map</li>
+          <li>Display location-based accessibility information to other users</li>
+          <li>Allow Youth Accessibility Leaders to review and validate submissions</li>
+          <li>Improve app performance, features, and stability</li>
+          <li>Communicate important updates about your submissions</li>
+        </ul>
+      </div>
+      <div class="ps">
+        <h3>4. Sharing Your Information</h3>
+        <p>We do not sell your personal data to third parties. We may share information with:</p>
+        <ul>
+          <li><strong>Service Providers</strong> – Such as Supabase (database), Google Maps (mapping), and Expo (app infrastructure) to operate the app.</li>
+          <li><strong>Legal Requirements</strong> – If required by law or to protect the safety of our users.</li>
+        </ul>
+        <p>Note: User-submitted tags, photos, and accessibility reviews may be visible to other users of the app as part of the community mapping feature.</p>
+      </div>
+      <div class="ps">
+        <h3>5. Data Retention</h3>
+        <p>We retain your personal data for as long as your account is active or as needed to provide services. You may request deletion of your account and associated data at any time by contacting us at <a href="mailto:tag4access@gmail.com">tag4access@gmail.com</a>.</p>
+      </div>
+      <div class="ps">
+        <h3>6. Your Rights</h3>
+        <p>Depending on your location, you may have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your data</li>
+          <li>Withdraw consent at any time</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <a href="mailto:tag4access@gmail.com">tag4access@gmail.com</a>.</p>
+      </div>
+      <div class="ps">
+        <h3>7. Children's Privacy</h3>
+        <p>Tag4Access is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal data, please contact us and we will promptly delete it.</p>
+      </div>
+      <div class="ps">
+        <h3>8. Security</h3>
+        <p>We implement industry-standard security measures to protect your information. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+      </div>
+      <div class="ps">
+        <h3>9. Changes to This Policy</h3>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the effective date at the top of this document. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+      </div>
+      <div class="ps">
+        <h3>10. Contact Us</h3>
+        <ul>
+          <li>Email: <a href="mailto:tag4access@gmail.com">tag4access@gmail.com</a></li>
+          <li>App: Tag4Access</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Tag4Access</strong><br>
+  Community-powered accessibility mapping<br>
+  <div class="fdiv"></div>
+  <a href="mailto:tag4access@gmail.com">tag4access@gmail.com</a> &nbsp;·&nbsp; <a href="#privacy">Privacy Policy</a><br><br>
+  &copy; 2026 Tag4Access. All rights reserved.
+</footer>
+
+<script>
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+  if(!open)item.classList.add('open');
+}
+function submitForm(){
+  const email=document.getElementById('em').value.trim();
+  const msg=document.getElementById('mg').value.trim();
+  if(!email||!msg){alert('Please fill in your email and message.');return;}
+  document.getElementById('succ').style.display='block';
+  ['fn','ln','em','mg'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('tp').value='';
+}
+</script>
+</body>
+</html>
